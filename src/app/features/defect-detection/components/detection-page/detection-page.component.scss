@@ -1,0 +1,84 @@
+.page {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.upload-card {
+  width: 100%;
+  max-width: 900px;
+  padding: 30px;
+  border-radius: 12px;
+  background: #ffffff;                     // Pure white
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);  // Soft shadow
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #0d47a1;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+button[mat-raised-button] {
+  background: #1976d2 !important;
+  color: white !important;
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+
+.content {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 18px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.preview {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0px 4px 18px rgba(0,0,0,0.15);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.result-card {
+  padding: 18px;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.result-card.ok {
+  background: #e8f5e9;
+  border: 2px solid #66bb6a;
+  color: #2e7d32;
+}
+
+.result-card.defect {
+  background: #ffebee;
+  border: 2px solid #ef5350;
+  color: #c62828;
+}
+
+mat-icon {
+  font-size: 36px;
+  margin-bottom: 4px;
+}

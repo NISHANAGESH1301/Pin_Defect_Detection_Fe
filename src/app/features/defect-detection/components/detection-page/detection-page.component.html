@@ -1,0 +1,44 @@
+<div class="page">
+
+  <mat-card class="upload-card">
+
+    <h2 class="title">Pin Defect Detection</h2>
+    <p class="subtitle">Upload an image to analyze defects automatically.</p>
+
+    <button mat-raised-button color="primary" (click)="fileInput.click()">
+      <mat-icon>upload</mat-icon> Select Image
+    </button>
+
+    <input type="file" #fileInput hidden accept="image/*" (change)="onFileChange($event)" />
+
+    <div class="content">
+
+      <!-- LEFT: Preview -->
+      <div class="left-panel" *ngIf="preview">
+        <div class="image-wrapper">
+          <img #imgRef [src]="preview" class="preview"/>
+          <canvas #canvasRef class="overlay"></canvas>
+        </div>
+      </div>
+
+      <!-- RIGHT: Result -->
+      <div class="right-panel">
+        
+        <div class="loading" *ngIf="loading">
+          <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+          <p>Analyzing…</p>
+        </div>
+
+        <mat-card *ngIf="resultText && !loading" class="result-card" [ngClass]="resultClass">
+          <mat-icon>{{ resultType === 'ok' ? 'check_circle' : 'error' }}</mat-icon>
+          <h3>{{ resultText }}</h3>
+          <p class="confidence" *ngIf="confidenceText">{{ confidenceText }}</p>
+        </mat-card>
+
+      </div>
+
+    </div>
+
+  </mat-card>
+
+</div>
