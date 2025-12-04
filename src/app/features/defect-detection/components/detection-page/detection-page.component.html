@@ -16,7 +16,7 @@
       <!-- LEFT: Preview -->
       <div class="left-panel" *ngIf="preview">
         <div class="image-wrapper">
-          <img #imgRef [src]="preview" class="preview"/>
+          <img #imgRef [src]="preview" class="preview"  (load)="drawBoxes()" />
           <canvas #canvasRef class="overlay"></canvas>
         </div>
       </div>

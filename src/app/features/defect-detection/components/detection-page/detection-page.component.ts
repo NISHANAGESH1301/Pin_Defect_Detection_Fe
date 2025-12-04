@@ -42,7 +42,7 @@ export class DetectionPageComponent {
         const maxConf = Math.max(...res.detections.map((d: any) => d.confidence));
         this.resultType = 'defect';
         this.resultClass = 'defect';
-        this.resultText = 'Defect Detected';
+        this.resultText = 'Insulation Defect Detected';
         this.confidenceText = `Confidence: ${(maxConf * 100).toFixed(1)}%`;
 
         setTimeout(() => this.drawBoxes());
